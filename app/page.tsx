@@ -38,7 +38,7 @@ const WeatherPage = () => {
         const { latitude, longitude } = await getUserLocation();
 
         const forecastResponse = await fetch(
-          `https://weatherforecast-qzy6.onrender.com/forecast?latitude=${latitude}&longitude=${longitude}`
+          `https://weatherforecast-qzy6.onrender.com/api/weather/forecast?latitude=${latitude}&longitude=${longitude}`
         );
         const forecastData = await forecastResponse.json();
 
