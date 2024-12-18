@@ -38,12 +38,12 @@ const WeatherPage = () => {
         const { latitude, longitude } = await getUserLocation();
 
         const forecastResponse = await fetch(
-          `http://localhost:8080/api/weather/forecast?latitude=${latitude}&longitude=${longitude}`
+          `{process.env.NEXT_PUBLIC_BACKEND_URL}/forecast?latitude=${latitude}&longitude=${longitude}`
         );
         const forecastData = await forecastResponse.json();
 
         const summaryResponse = await fetch(
-          `http://localhost:8080/api/weather/summary?latitude=${latitude}&longitude=${longitude}`
+          `{process.env.NEXT_PUBLIC_BACKEND_URL}/api/weather/summary?latitude=${latitude}&longitude=${longitude}`
         );
         const summaryData = await summaryResponse.json();
 
